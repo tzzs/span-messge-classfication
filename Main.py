@@ -12,5 +12,10 @@ with open('train.csv', encoding='utf-8') as f:
 print(data)
 
 for d in data:
-    d = d[:-4]
-    print(d.split(',', 1))
+    d = d.split(',', 1)
+
+    label.append(d[0])
+    message.append(d[1])
+
+print(label)
+print(message)
