@@ -28,5 +28,5 @@ for row in rows[1:]:
 docs = [m.split() for m in message]
 
 # 生成词表
-words = list(set(chain(*docs)))  # 加*是将列表拆分为两个参数
+words = list(set(chain(*docs)))  # 加*是将列表拆分为多个参数
 print(words)
