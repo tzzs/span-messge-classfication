@@ -19,14 +19,15 @@ with open('train.csv', 'r', encoding='utf-8') as f:
 print(rows)
 
 for row in rows[1:]:
-    if row[0] == 'ham':
+    if row[0] == 'ham':  # 非垃圾短信
         label.append(0)
-    elif row[0] == 'spam':
+    elif row[0] == 'spam':  # 垃圾短信
         label.append(1)
     else:
         label.append(-1)
         print(row)
-    message.append(row[1].lower())
+    text = re.sub(r'[^a-z ]', '', row[1].lower())
+    message.append(text)
 
 print(label)
 print(message)
